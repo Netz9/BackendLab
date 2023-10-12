@@ -22,10 +22,10 @@ class vehiculo extends Model
       'placa',
       'vin',
       'chasis',
-      'Color',
+      'color',
       'estadoActivo',
       'fechaRegistro ',
-      'HoraRegistro'
+      'horaRegistro'
     ];
 
     public function setNombrePropietarioAttribute($value)

@@ -6,6 +6,7 @@ use App\Http\Controllers\API\PersonController;
 use App\Http\Controllers\API\tareaController;
 use App\Http\Controllers\API\InscripcionController;
 use App\Http\Controllers\API\ParcialController;
+use App\Http\Controllers\API\vehiculoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,4 +45,8 @@ Route::prefix('par')->group(function () {
     Route::get('/{id}',[ ParcialController::class, 'getById']);
     Route::put('/{id}',[ ParcialController::class, 'update']);
     Route::delete('/{id}',[ ParcialController::class, 'delete']);
+});
+
+Route::prefix('vehiculo')->group(function () {
+    Route::get('/getAll',[ vehiculoController::class, 'getAll']);
 });
