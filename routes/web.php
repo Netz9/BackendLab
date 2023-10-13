@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\vehiculoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::prefix('vehiculo')->group(function () {
+    Route::get('/get',[ vehiculoController::class, 'get']);
+    Route::post('/',[ vehiculoController::class, 'create']);
+    Route::get('/{id}',[ vehiculoController::class, 'getById']);
+    Route::put('/{id}',[ vehiculoController::class, 'update']);
+    Route::delete('/{id}',[ vehiculoController::class, 'delete']);
 });

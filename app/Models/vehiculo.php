@@ -24,8 +24,6 @@ class vehiculo extends Model
       'chasis',
       'color',
       'estadoActivo',
-      'fechaRegistro ',
-      'horaRegistro'
     ];
 
     public function setNombrePropietarioAttribute($value)
