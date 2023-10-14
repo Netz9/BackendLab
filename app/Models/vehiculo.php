@@ -12,6 +12,7 @@ class vehiculo extends Model
     protected $table = "vehiculo";
 
     protected $fillable = [
+      'id',
       'nitPropietario',
       'cuiPropietario',
       'nombrePropietario',
@@ -23,11 +24,6 @@ class vehiculo extends Model
       'vin',
       'chasis',
       'color',
-      'estadoActivo',
+      'estadoActivo'
     ];
-
-    public function setNombrePropietarioAttribute($value)
-    {
-        $this->attributes['nombrePropietario'] = ucwords($value);
-    }
 }

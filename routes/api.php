@@ -7,6 +7,7 @@ use App\Http\Controllers\API\tareaController;
 use App\Http\Controllers\API\InscripcionController;
 use App\Http\Controllers\API\ParcialController;
 use App\Http\Controllers\API\vehiculoController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -48,5 +49,9 @@ Route::prefix('par')->group(function () {
 });
 
 Route::prefix('vehiculo')->group(function () {
-    Route::get('/getAll',[ vehiculoController::class, 'getAll']);
+    Route::get('/get',[ vehiculoController::class, 'get']);
+    Route::post('/create',[ vehiculoController::class, 'create']);
+    Route::get('/get/{id}',[ vehiculoController::class, 'getById']);
+    Route::put('/update/{id}',[ vehiculoController::class, 'update']);
+    Route::delete('/delete/{id}',[ vehiculoController::class, 'delete']);
 });
