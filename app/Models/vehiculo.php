@@ -30,4 +30,9 @@ class vehiculo extends Model
     {
         $this->attributes['nombrePropietario'] = ucwords($value);
     }
+
+    public function placas()
+{
+    return $this->belongsTo(Placas::class, 'placas_id');
+}
 }
