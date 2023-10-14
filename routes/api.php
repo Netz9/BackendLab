@@ -7,6 +7,7 @@ use App\Http\Controllers\API\tareaController;
 use App\Http\Controllers\API\InscripcionController;
 use App\Http\Controllers\API\ParcialController;
 use App\Http\Controllers\API\vehiculoController;
+use App\Http\Controllers\API\tipoplacaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +55,9 @@ Route::prefix('vehiculo')->group(function () {
     Route::get('/get/{id}',[ vehiculoController::class, 'getById']);
     Route::put('/update/{id}',[ vehiculoController::class, 'update']);
     Route::delete('/delete/{id}',[ vehiculoController::class, 'delete']);
+});
+
+Route::prefix('tipoPlaca')->group(function () {
+    Route::get('/get',[ tipoplacaController::class, 'get']);
+    Route::get('/get/{id}',[ tipoplacaController::class, 'getById']);
 });
