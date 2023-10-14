@@ -18,15 +18,3 @@ use App\Http\Controllers\vehiculoController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::prefix('vehiculo')->group(function () {
-    Route::get('/get',[ vehiculoController::class, 'get']);
-    Route::post('/create',[ vehiculoController::class, 'create']);
-    Route::get('/get/{id}',[ vehiculoController::class, 'getById']);
-    Route::put('/update{id}',[ vehiculoController::class, 'update']);
-    Route::delete('/delete/{id}',[ vehiculoController::class, 'delete']);
-});
