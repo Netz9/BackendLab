@@ -26,4 +26,9 @@ class vehiculo extends Model
       'color',
       'estadoActivo'
     ];
+
+    public function placas()
+    {
+      return $this->belongsTo(Placas::class, 'placas_id');
+    }
 }
