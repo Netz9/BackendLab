@@ -57,7 +57,7 @@ Route::prefix('vehiculo')->group(function () {
     Route::delete('/delete/{id}',[ vehiculoController::class, 'delete']);
 });
 
-Route::prefix('tipoPlaca')->group(function () {
+Route::prefix('tipoplaca')->group(function () {
     Route::get('/get',[ tipoplacaController::class, 'get']);
     Route::get('/get/{id}',[ tipoplacaController::class, 'getById']);
 });

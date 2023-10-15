@@ -78,13 +78,17 @@ class vehiculoController extends Controller
         }
     }
 
-//-------------------------------------------------------------------------------------- ESTO ALE
+
     public function getById($id){
         try {
-            $data = vehiculo::find($id);
+            // Busca el vehículo por su ID
+            $data = vehiculo::select('vehiculo.*', 'tipoPlaca.descripcion')
+            ->join('tipoPlaca', 'vehiculo.tipoPlaca_id', '=', 'tipoPlaca.id')->find($id);
+
             return response()->json($data, 200);
+
         } catch (\Throwable $th) {
-            return response()->json([ 'error' => $th->getMessage()], 500);
+            return response()->json(['error' => $th->getMessage()], 500);
         }
     }
 
@@ -142,7 +146,6 @@ class vehiculoController extends Controller
         }
     }
 
-//-------------------------------------------------------------------------------- ESTO ALE
     public function delete($id){
         try {
             $res = vehiculo::find($id)->delete();
