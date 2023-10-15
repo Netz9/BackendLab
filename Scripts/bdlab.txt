@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2023 a las 02:52:12
+-- Tiempo de generación: 15-10-2023 a las 09:33:18
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -69,9 +69,10 @@ CREATE TABLE `vehiculo` (
   `nitPropietario` varchar(255) NOT NULL,
   `cuiPropietario` varchar(255) NOT NULL,
   `nombrePropietario` varchar(255) NOT NULL,
+  `tipoplaca` varchar(10) NOT NULL,
   `tipoPlaca_id` int(11) NOT NULL,
   `placa` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
+  `tipovehiculo` varchar(255) NOT NULL,
   `marca` varchar(255) NOT NULL,
   `linea` varchar(255) NOT NULL,
   `modelo` varchar(255) NOT NULL,
@@ -87,15 +88,16 @@ CREATE TABLE `vehiculo` (
 -- Volcado de datos para la tabla `vehiculo`
 --
 
-INSERT INTO `vehiculo` (`id`, `nitPropietario`, `cuiPropietario`, `nombrePropietario`, `tipoPlaca_id`, `placa`, `tipo`, `marca`, `linea`, `modelo`, `vin`, `chasis`, `color`, `estadoActivo`, `updated_at`, `created_at`) VALUES
-(1, '123456789', '101010101', 'John Doe', 3, 'ABC123', 'xxx', 'Toyota', 'Corolla', '2020', '1234567890', 'XYZ789', 'Rojo', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
-(2, '987654321', '202020202', 'Jane Smith', 4, 'XYZ789', 'xxx', 'Honda', 'Civic', '2019', '9876543210', 'ABC123', 'Azul', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
-(3, '555555555', '303030303', 'Alice Johnson', 3, 'DEF456', 'xxx', 'Ford', 'Focus', '2022', '5555555555', 'LMN789', 'Verde', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
-(4, '111111111', '404040404', 'Bob Brown', 4, 'GHI789', 'xxx', 'Chevrolet', 'Malibu', '2021', '1111111111', 'OPQ123', 'Gris', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
-(5, '999999999', '505050505', 'Eva Wilson', 5, 'JKL456', '', 'Nissan', 'Altima', '2018', '9999999999', 'RST789', 'Negro', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
-(6, '12345', '12345', 'Pruba', 4, 'xxxx', '', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 06:25:16', '2023-10-14 06:25:16'),
-(7, '12345', '12345', 'Pruba2', 4, 'xxxx', '', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 06:28:11', '2023-10-14 06:28:11'),
-(8, '12345', '12345', 'Pruba3', 3, 'xxxx', 'Sedan', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 07:17:47', '2023-10-14 07:17:47');
+INSERT INTO `vehiculo` (`id`, `nitPropietario`, `cuiPropietario`, `nombrePropietario`, `tipoplaca`, `tipoPlaca_id`, `placa`, `tipovehiculo`, `marca`, `linea`, `modelo`, `vin`, `chasis`, `color`, `estadoActivo`, `updated_at`, `created_at`) VALUES
+(1, '123456789', '101010101', 'John Doe', '', 3, 'ABC123', 'xxx', 'Toyota', 'Corolla', '2020', '1234567890', 'XYZ789', 'Rojo', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
+(2, '987654321', '202020202', 'Jane Smith', '', 4, 'XYZ789', 'xxx', 'Honda', 'Civic', '2019', '9876543210', 'ABC123', 'Azul', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
+(3, '555555555', '303030303', 'Alice Johnson', '', 3, 'DEF456', 'xxx', 'Ford', 'Focus', '2022', '5555555555', 'LMN789', 'Verde', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
+(4, '111111111', '404040404', 'Bob Brown', '', 4, 'GHI789', 'xxx', 'Chevrolet', 'Malibu', '2021', '1111111111', 'OPQ123', 'Gris', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
+(5, '999999999', '505050505', 'Eva Wilson', '', 5, 'JKL456', '', 'Nissan', 'Altima', '2018', '9999999999', 'RST789', 'Negro', 1, '2023-10-13 23:21:29', '2023-10-13 23:21:29'),
+(6, '12345', '12345', 'Pruba', '', 4, 'xxxx', '', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 06:25:16', '2023-10-14 06:25:16'),
+(7, '12345', '12345', 'Pruba2', '', 4, 'xxxx', '', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 06:28:11', '2023-10-14 06:28:11'),
+(8, '12345', '12345', 'Pruba3', '', 3, 'xxxx', 'Sedan', 'xxxx', 'xxxx', 'xxx', 'xxxx', 'xxxx', 'xxxx', 1, '2023-10-14 07:17:47', '2023-10-14 07:17:47'),
+(9, '0000', '1234', 'Alejandra', '', 4, 'GRT456', 'sedan', 'Honda', 'Civic', '2003', '88wu8wue8w', '2984r928ru', 'Azul', 1, '2023-10-15 07:05:59', '2023-10-15 07:05:59');
 
 --
 -- Índices para tablas volcadas
@@ -128,7 +130,7 @@ ALTER TABLE `tipoplaca`
 -- AUTO_INCREMENT de la tabla `vehiculo`
 --
 ALTER TABLE `vehiculo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

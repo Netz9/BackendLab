@@ -16,9 +16,10 @@ class vehiculo extends Model
       'nitPropietario',
       'cuiPropietario',
       'nombrePropietario',
+      'tipoplaca',
       'tipoPlaca_id',
       'placa',
-      'tipo',
+      'tipovehiculo',
       'marca',
       'linea',
       'modelo',
@@ -27,6 +28,7 @@ class vehiculo extends Model
       'color',
       'estadoActivo'
     ];
+    
     public function tipoPlaca()
     {
       return $this->belongsTo(tipoPlaca::class, 'tipoPlaca_id');
